@@ -1,0 +1,63 @@
+@import '../../../../../node_modules/@angular//material/theming';
+@include mat-core();
+
+@import './theme-colors';
+
+
+/**
+* Put some extra love here
+*/
+@mixin theme-extras($theme) {
+    ::-webkit-scrollbar {
+        width: .75rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: mat-color(map-get($theme, primary));
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: mat-color(map-get($theme, accent));
+    }
+}
+
+/**
+* Setup light or dark theme
+*/
+@function create-theme($primary, $accent, $warn, $isDark: false) {
+    $theme: mat-light-theme(
+        $primary,
+        $accent,
+        $warn
+      );
+    @if $isDark {
+        $theme: mat-dark-theme(
+            $primary,
+            $accent,
+            $warn
+          );
+    }
+
+    @return $theme;
+}
+
+/**
+*   contrast theme
+*/
+@function contrast-theme($isDark: false) {
+    $primary: mat-palette($primary);
+    $accent: mat-palette($accent);
+    $warn: mat-palette($warn, 500);
+
+    @return create-theme($primary, $accent, $warn, $isDark);
+}
+
+
+/**
+* pull back a specific color from a color palette
+*/
+@function palette-color($theme, $hue: 500) {
+    $palette: mat-palette($theme, $hue);
+    $color: mat-color($palette);
+    @return $color;
+}

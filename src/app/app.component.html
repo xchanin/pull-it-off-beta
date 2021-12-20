@@ -1,0 +1,14 @@
+<pio-header></pio-header>
+<pio-navigation></pio-navigation>
+<div fxFlexFill fxLayout="column">
+    <div
+      [@RouteAnim]="PrepareRoute(outlet)"
+      class="margin-5 router-container">
+        <router-outlet 
+          #outlet="outlet"
+          (activate)="OnActivate($event)">
+        </router-outlet>
+    </div>
+   
+    <pio-footer></pio-footer>
+</div>

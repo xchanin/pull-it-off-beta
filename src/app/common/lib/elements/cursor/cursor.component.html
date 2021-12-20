@@ -1,0 +1,11 @@
+<div 
+    #Cursor
+    class="cursor" 
+    [style.top]="Top" 
+    [style.left]="Left"
+    [ngClass]="{'expand':Expand}">
+
+    <span #CursorText class="cursor-text">
+        {{ CursorLabel }}
+    </span>
+</div>

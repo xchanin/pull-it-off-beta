@@ -1,0 +1,89 @@
+.cursor {
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+    transition-property: background, transform;
+    transform-origin: 75% 75%;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    z-index: 10000;
+    // animation: cursorAnim .5s infinite alternate;
+  }
+
+  .cursor.schedule-active {
+    background: rgb(86, 228, 216);
+    transform: scale(3);
+  }
+
+  .cursor.nav-active {
+    background: rgb(86, 124, 228);
+    transform: scale(3);
+  }
+
+  .cursor.explore-active {
+    background: rgb(233, 233, 233);
+    transform: scale(3);
+    color: black;
+  }
+  
+  .cursor-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 0.5rem;
+    transform: translate(-50%, -50%);
+  }
+
+//   .cursor::after {
+//     content: "";
+//     width: 20px;
+//     height: 20px;
+//     position: absolute;
+//     border: 8px solid gray;
+//     border-radius: 50%;
+//     opacity: .5;
+//     top: -8px;
+//     left: -8px;
+//     animation: cursorAnim2 .5s infinite alternate;
+//   }
+  
+  @keyframes cursorAnim {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(.7);
+    }
+  }
+  
+  @keyframes cursorAnim2 {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(.4);
+    }
+  }
+  
+  @keyframes cursorAnim3 {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(3);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+  
+  .expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid red;
+  }

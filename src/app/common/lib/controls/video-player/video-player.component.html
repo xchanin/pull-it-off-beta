@@ -1,0 +1,62 @@
+<div *ngIf="Video">
+    <!-- <pre>{{ Video.URL | json }}</pre> -->
+        <video 
+            #player
+            id="player"
+            [attr.controls]=Controls 
+            [attr.autoplay]=AutoPlay
+            [attr.mutted]=Muted
+            [attr.controlsList]=ControlsList
+            [attr.playsinline]="PlaysInline"
+            [attr.disablePictureInPicture]=DisablePictureInPicture
+            [attr.loop]=Loop
+            (ended)=OnEnded()
+            (playing)=OnPlaying()
+            (pause)=OnPaused()
+            (volumechange)=OnVolumeChange($event)
+            (timeupdate)=OnTimeUpdate()
+            (durationchange)=OnDurationChange()
+            poster="{{ Video.Thumbnail }}"
+            [src]="Video.URL">
+            <!-- <source [src]="Video.URL" type="{{ Video.MimeType }}" /> -->
+            Browser not supported
+            <!-- Can add custom controls 
+                https://www.youtube.com/watch?v=yY6XnbWnK4o
+                https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Video_player_styling_basics
+            -->
+        </video>
+        
+    <!-- <vm-player 
+        #player
+        playsinline
+        (vPlaybackReady)="onPlaybackReady($event)">
+        
+        <vm-video 
+            *ngIf="Video.Vendor === 'hosted'" 
+            cross-origin="true" 
+            poster="{{ Video.Thumbnail }}">
+            <source data-src="{{ Video.URL }}" type="{{ Video.MimeType }}" />
+        </vm-video> 
+
+        
+        
+        <vm-youtube 
+            *ngIf="Video.Vendor === 'youtube'" 
+            cross-origin="true" 
+            cookies="true" 
+            video-id="FAMXlFHOyD0">
+        </vm-youtube>
+
+       
+        <vm-vimeo 
+            *ngIf="Video.Vendor === 'vimeo'" 
+            cross-origin="true" 
+            cookies="true" 
+            video-id="411652396">
+        </vm-vimeo>
+        <vm-default-ui>
+       
+        </vm-default-ui>
+    </vm-player> -->
+    
+</div>

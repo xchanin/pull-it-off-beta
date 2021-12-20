@@ -1,0 +1,26 @@
+<header class="nav-header" fxLayout="row" fxLayoutAlign="center space-between">
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="inner-con">
+        <a href="./index.html" class="logo" id="logo">
+            <img #logoImg src="./assets/images/logo/logo.svg" alt="">
+        </a>
+        <div fxLayout="row">
+            <ul fxLayout="row">
+                <li *ngIf="!UserIsAuthenticated">
+                    <a mat-button routerLink="/auth/signup" routerLinkeActive="mat-accent">Sign Up</a>
+                </li>
+                <li *ngIf="!UserIsAuthenticated">
+                    <a mat-button routerLink="/auth/login" routerLinkeActive="mat-accent">Login</a>
+                </li>
+                <li *ngIf="UserIsAuthenticated">
+                    <button mat-button (click)="Logout()">Logout</button>
+                </li>
+            </ul>
+            <div 
+                class="burger" 
+                (click)="ToggleNavigation()">
+                <div class="line1"></div>
+                <div class="line2"></div>
+            </div>
+        </div>
+    </div>
+</header>

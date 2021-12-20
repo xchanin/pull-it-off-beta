@@ -1,0 +1,27 @@
+<div  
+    #Slides 
+    *ngFor="let slide of Config;
+    let i = index">
+    <!-- <div style="width: 100px; height: 100px; background-color: red;"></div> -->
+    <div #SlideChild class="slide" style="margin-bottom: 20px;">
+        <div class="hero-img">
+            <img [src]="slide.Image" [alt]="slide.ImageAlt">
+            <div class="reveal-img"></div>
+        </div>
+        <div class="hero-desc">
+            <div class="title">
+                <h2>
+                    {{ slide.Title }}
+                    <span [class]="slide.SubTitleClasslist">{{ slide.SubTitle }}</span>
+                </h2>
+                <div class="title-swipe" [class]="slide.TitleSwipeColor"></div>
+            </div>
+            <p>
+                {{ slide.Detail }}
+            </p>
+            <!-- <a class="explore BtnClass">{{ slide.ButtonLabel }}</a> -->
+            <pio-schedule-appointment></pio-schedule-appointment>
+            <div class="reveal-text"></div>
+        </div>
+    </div>
+</div>

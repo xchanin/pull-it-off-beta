@@ -1,0 +1,109 @@
+<div 
+    *ngIf="VideosLoaded"
+    class="content" 
+    fxLayout="row wrap" 
+    fxLayoutGap="16px grid">
+    <!-- <mat-toolbar color="primary">
+        <span>Videos</span>
+        <div 
+            *ngIf="Videos.length > ColumnCount.Max"
+            fxLayout="row" 
+            fxLayoutGap="10px">
+            <button 
+                mat-button 
+                (click)="ToggleGridColumns()" 
+                fxHide.lt-md>
+            <span *ngIf="GridColumnCount === ColumnCount.Max">
+                {{ ColumnCount.Min }} Columns
+            </span>
+            <span *ngIf="GridColumnCount === ColumnCount.Min">
+                {{ ColumnCount.Max }} Columns
+            </span>
+            </button>
+        </div>
+      </mat-toolbar> -->
+    <div 
+        [fxFlex]="(100 / GridColumnCount) + '%'" 
+        fxFlex.xs="100%" 
+        fxFlex.sm="33%" 
+        *ngFor="let video of Videos; let idx = index">
+        <!-- *ngFor="let num of [1,2,3,4,5,6,7]" -->
+     <mat-card class="video">
+      <div 
+        fxLayout="column" 
+        fxLayoutAlign="space-between" 
+        fxFlex>
+        <div>
+          <mat-card-header>
+            <mat-card-title class="title">{{ video.Title }}</mat-card-title>
+            <mat-card-subtitle class="sub-title">{{ video.SubTitle }}</mat-card-subtitle>
+          </mat-card-header>
+          <img 
+            class="thumbnail" 
+            mat-card-image 
+            [src]="video.Thumbnail"
+            (click)="Play(idx)">
+          <mat-card-content>
+            <p class="plain-text">
+              {{ video.Description }}
+            </p>
+          </mat-card-content>
+        </div>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="Play(idx)">Play</button>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </div>
+      </mat-card>
+    </div>
+  </div>
+
+
+<!--
+<mat-accordion>
+  <div class="expansion-container">
+      <div 
+          fxLayout="row" 
+          *ngFor="let video of Videos; let idx = index">
+          <div 
+            fxFlex  
+            fxLayoutGap="10px"
+            fxLayout="column"
+            class="margin-2">
+              <mat-expansion-panel class="expansion-panel" fxLayoutGap="10px">
+                  <mat-expansion-panel-header
+                      [collapsedHeight]="'100px'" 
+                      [expandedHeight]="'100px'">
+                      <div 
+                          fxLayout="row" 
+                          fxFlex
+                          fxLayoutAlign="space-between center"
+                          class="margin-right-3">
+                          <div fxLayout="row">
+                              <div class="icon">
+                                  <img [src]="video.Thumbnail">
+                              </div>
+                              <div fxLayout="column" class="details margin-left-3">
+                                  <span class="title mat-body-1">{{ video.Title }}</span>
+                                  <span class="mat-body-2">{{ video.SubTitle }}</span>
+                                  <button mat-raised-button color="primary" (click)="Play(idx)">Play</button>
+                              </div>
+                          </div>
+                         
+                      </div>
+                  </mat-expansion-panel-header>
+                  <p>{{ video.Description }}</p>
+              </mat-expansion-panel>
+          </div>
+      </div>
+  </div>
+</mat-accordion> -->
+
+ <!-- <div fxLayout="row" class="actions">
+                              <div class="item" *ngFor="let action of item.Actions">
+                                  <button mat-icon-button [matTooltip]="action.Tooltip">
+                                      <mat-icon color="primary">{{ action.Icon }}</mat-icon>
+                                  </button>
+                              </div>
+                          </div> -->

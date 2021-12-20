@@ -1,0 +1,53 @@
+#logo {
+    // color: white;
+    // font-family: "Abril Fatface";
+  }
+
+  .logo {
+    height: auto;
+    width: 130px;
+  }
+
+  .burger {
+    cursor: pointer;
+
+    .line1,
+    .line2 {
+      width: 2rem;
+      height: 0.2rem;
+      margin: 0.4rem;
+      background: white;
+      pointer-events: none;
+    }
+  }
+  
+  .nav-header {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    position: fixed;
+    height: 85px;
+    width: 100%;
+    font-size: 1rem;
+    color: white;
+    z-index: 2;
+    background-color: #252525;
+
+    .inner-con {
+      width: 80%;
+      // display: flex;
+      // align-items: center;
+      // justify-content: space-between;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }

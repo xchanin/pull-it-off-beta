@@ -1,0 +1,26 @@
+
+<nav class="nav-bar">
+    <ul 
+      class="nav-links">
+      <div 
+        fxFlexFill
+        fxLayout="column"
+        *ngFor="let nav of NavLinks">
+        <h3 
+          (click)="ToggleNav(false)" 
+          [routerLink]="nav.route"
+          routerLinkActive="is-active">
+          <a mat-button >
+            {{nav.label}}
+          </a>
+        </h3>
+      </div>
+    </ul>
+    <div class="contact" fxLayout="column" fxLayoutGap="10px">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium veniam, voluptatum non quibusdam possimus
+        nihil. Perspiciatis facilis deleniti debitis amet?
+      </p>
+      <pio-contact></pio-contact>
+    </div>
+  </nav>

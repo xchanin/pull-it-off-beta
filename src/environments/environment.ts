@@ -1,0 +1,33 @@
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment = {
+  production: false,
+  SENDGRID_API_KEY: '',
+  AWS_API: 'http://localhost:3000/api',  
+  firebase: {
+    apiKey: '',
+    authDomain: '',
+    databaseURL: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: '',
+    measurementId: ''
+  },
+  GAPI_CLIENT_ID: '',
+  EMAILJS_API: '',
+  SEND_GRID_SERVICE_ID: '',
+  SEND_GRID_TEMPLATE_ID: '',
+  SEND_GRID_USER_ID: ''
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.

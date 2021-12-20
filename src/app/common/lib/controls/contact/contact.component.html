@@ -1,0 +1,98 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image">
+            <mat-icon color="primary" class="title-icon">description</mat-icon>
+        </div>
+        <mat-card-title class="paragraph-title">Contact</mat-card-title>
+        <mat-card-subtitle class="plain-text">Send me a message</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="Form" fxLayout="column" fxLayoutGap="10px" novalidate>
+            <div fxFlex fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="start center"
+                fxLayoutGap="10px">
+                <div fxFlex fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="start center"
+                    fxLayoutGap="10px">
+                    <mat-icon color="primary">face</mat-icon>
+                    <mat-form-field fxFlex>
+                        <input formControlName="FullNameControl" matInput placeholder="Full Name" required>
+                        <mat-error *ngIf="FullNameControl.hasError('required') && 
+                                          FullNameControl.dirty || 
+                                          FullNameControl.touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxFlex fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="start center"
+                fxLayoutGap="10px">
+                <mat-icon color="primary">email</mat-icon>
+                <mat-form-field fxFlex>
+                    <input formControlName="EmailControl" matInput placeholder="Email" required autocomplete="email">
+                    <mat-error *ngFor="let validation of VMEmail">
+                        <mat-error *ngIf="EmailControl.hasError(validation.Type) && EmailControl.dirty || EmailControl.touched">
+                            <mat-error *ngIf="validation.Type === 'pattern'">
+                            {{validation.Message}}
+                            </mat-error>
+                        </mat-error>
+                        </mat-error>
+                </mat-form-field>
+            </div>
+            <div fxFlex fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="start center"
+                fxLayoutGap="10px">
+                <div fxFlex fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="start center"
+                    fxLayoutGap="10px">
+                    <mat-icon color="primary">mode_comment</mat-icon>
+                    <mat-form-field fxFlex>
+                        <!-- <input formControlName="CommentControl" matInput placeholder="Comment" required> -->
+                        <textarea 
+                            formControlName="CommentControl" 
+                            matInput placeholder="Comment" 
+                            required
+                            cols="30" rows="5">
+                        </textarea>
+                        <mat-error *ngIf="CommentControl.hasError('required') && 
+                                          CommentControl.dirty || 
+                                          CommentControl.touched">
+                            A value is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div 
+                fxFlex 
+                fxLayout.lg="row" 
+                fxLayout.sm="column" 
+                fxLayout.xs="column" 
+                fxLayoutAlign.lg="start end" 
+                fxLayoutGap="10px">
+                <div *ngIf="Sending">Sending...</div>
+                <div *ngIf="MessageSent">Message Sent</div>
+                <div *ngIf="SendError">Message has an error</div>
+                <div fxFlex fxLayoutAlign="end center" fxLayoutGap="10px">
+                  <button 
+                    fxLayout="row"
+                    fxLayoutGap="5px"
+                    mat-raised-button 
+                    color="primary" 
+                    [disabled]="!Form.valid || IsLoading" 
+                    (click)="Send()"
+                    class="send-btn">
+                    <mat-spinner 
+                        *ngIf="IsLoading" 
+                        color="accent"  
+                        [diameter]="20"></mat-spinner>
+                    Send
+                  </button>
+                    <!-- </div>
+                    <div fxFlex> -->
+                    <button 
+                        mat-raised-button 
+                        color="warn" 
+                        [disabled]="!Form.dirty || IsLoading" 
+                        (click)="ClearForm()">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

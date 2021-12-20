@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&family=Montserrat:wght@100;300;500;600;700&family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@100;400;500;700&display=swap');
+@import '../../../../../node_modules/@lcu/common/assets/styles/utils/reset';
+@import '../../../../../node_modules/@lcu/common/assets/styles/utils/margins-padding';
+
+@import './theme_setup';
+
+:root {
+  --background-color: #17181a;
+  --navigation-background-color: #f1f1f1;
+  --nav-button-background-color: #c1cadb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--background-color);
+  color: white;
+}
+
+.router-container {
+  margin: 75px 10px 0px 75px;
+}
+
+/**
+ * Remove background to generic modal
+ * This is set in the open function of generic-modal.service
+*/
+.modal-container-custom .mat-dialog-container {
+  padding: 0;
+	// background: grey;
+}
+
+/**
+* Controll backdrop when modal is open
+*/
+.modal-backdrop-custom {
+  background: var(--background-color);
+  opacity: .9 !important;
+}

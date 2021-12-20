@@ -1,0 +1,27 @@
+mat-toolbar {
+    justify-content: space-between;
+}
+
+.video {
+    height: 100%;
+}
+.content {
+    padding: 16px;
+}
+.content > mat-card {
+    margin-bottom: 16px;
+}
+
+.icon {
+    display: block;
+    width: 100px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.thumbnail {
+    cursor: pointer;
+}
