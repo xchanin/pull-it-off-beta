@@ -12,7 +12,7 @@ env:
   NPMRegistry: https://registry.npmjs.org/
   InstallCommand: npm ci
   BuildCommand: npm run build
-  Output: ./dist/pull-it-off
+  Output: ./dist/pull-it-off-beta
 
 jobs:
   build:
@@ -48,7 +48,7 @@ jobs:
 
       # bump version and push tag
       - name: Bump version and push tag
-        uses: fathym/github-tag-action@master
+        uses: fathym/github-tag-action@main
         id: versionBump
         env:
           DEFAULT_BUMP: ${{ steps.vars.outputs.versionBump }}
