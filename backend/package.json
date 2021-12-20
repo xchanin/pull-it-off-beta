@@ -1,5 +1,5 @@
 {
-		"name": "@pull-it-off/pull-it-off",
+		"name": "@pull-it-off/pull-it-off-beta",
 		"version": "0.0.2",
 		"dependencies": {
 			"@sendgrid/mail": "^7.6.0",

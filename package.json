@@ -1,5 +1,5 @@
 {
-		"name": "@pull-it-off/pull-it-off",
+		"name": "@pull-it-off/pull-it-off-beta",
 		"version": "0.0.2",
 		"scripts": {
 				"ng": "ng",
@@ -13,7 +13,7 @@
 		},
 		"repository": {
 				"type": "git",
-				"url": "git+https://github.com/xchanin/pull-it-off.git"
+				"url": "git+https://github.com/xchanin/pull-it-off-beta.git"
 		},
 		"dependencies": {
 				"@angular/animations": "~13.0.3",

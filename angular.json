@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pull-it-off-basic": {
+    "pull-it-off-beta": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pull-it-off-basic:build:production"
+              "browserTarget": "pull-it-off-beta:build:production"
             },
             "development": {
-              "browserTarget": "pull-it-off-basic:build:development"
+              "browserTarget": "pull-it-off-beta:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pull-it-off-basic:build"
+            "browserTarget": "pull-it-off-beta:build"
           }
         },
         "test": {
@@ -112,5 +112,5 @@
       }
     }
   },
-  "defaultProject": "pull-it-off-basic"
+  "defaultProject": "pull-it-off-beta"
 }
